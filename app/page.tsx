@@ -12,6 +12,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [favorites, setFavorites] = useState<number[]>([]);
   const [selectedPokemon, setSelectedPokemon] = useState<any>(null);
+  const [selectedType, setSelectedType] = useState("");
 
   // Load favorites
   useEffect(() => {
@@ -43,9 +44,23 @@ export default function Home() {
       <input
         type="text"
         placeholder="Search Pokémon"
-        className="border p-3 mb-6 w-full rounded-lg shadow-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="border p-3 mb-3 w-full rounded-lg shadow-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
         onChange={(e) => setSearch(e.target.value)}
       />
+
+  <select
+  className="border p-3 mb-4 w-full rounded-lg bg-white text-gray-900"
+  value={selectedType}
+  onChange={(e) => setSelectedType(e.target.value)}
+>
+  <option value="">All Types</option>
+  <option value="fire">Fire</option>
+  <option value="water">Water</option>
+  <option value="grass">Grass</option>
+  <option value="electric">Electric</option>
+  <option value="normal">Normal</option>
+</select>
+
 
       {/* Grid */}
       {loading ? (
@@ -53,9 +68,17 @@ export default function Home() {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {data
-            .filter((p) =>
-              p.name.toLowerCase().includes(search.toLowerCase())
-            )
+          .filter((p) => {
+  const matchesSearch = p.name
+    .toLowerCase()
+    .includes(search.toLowerCase());
+
+  const matchesType =
+    selectedType === "" ||
+    p.types?.some((t: any) => t.type.name === selectedType);
+
+  return matchesSearch && matchesType;
+})
             .map((pokemon) => (
               <PokemonCard
                 key={pokemon.id}

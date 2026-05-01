@@ -16,6 +16,9 @@ A responsive web application that allows users to explore Pokémon, search by na
 - 🔍 **Search**
   - Real-time filtering of Pokémon by name
 
+- 🏷️ **Filter by Type**
+  - Filter Pokémon based on selected types (e.g., Fire, Water, Grass)
+
 - ⭐ **Favorites**
   - Mark/unmark Pokémon as favorites
   - Favorites persist using localStorage
@@ -31,6 +34,9 @@ A responsive web application that allows users to explore Pokémon, search by na
 
 - 📱 **Responsive UI**
   - Works across mobile, tablet, and desktop
+
+- ✨ **Animations**
+  - Smooth hover effects on cards and modal transitions
 
 ---
 
@@ -74,6 +80,7 @@ Open `http://localhost:3000`
 * Implemented parallel API calls using `Promise.all` to fetch Pokémon details
 * Managed favorites state with `localStorage` for persistence across sessions
 * Designed a reusable component structure for scalability
+* Implemented client-side filtering for Pokémon types using available API data
 
 ---
 
@@ -92,8 +99,6 @@ Open `http://localhost:3000`
 
 ## ✨ Possible Improvements
 
-* Filter Pokémon by type
-* Add animations for better UX
 * Implement server-side rendering for performance
 * Add dark mode support
 

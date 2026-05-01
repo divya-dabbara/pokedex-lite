@@ -14,8 +14,7 @@ export default function PokemonCard({
     return (
         <div
             onClick={onClick}
-            className={`bg-white rounded-xl shadow-md p-4 text-center transition duration-200 relative hover:scale-105 hover:shadow-lg cursor-pointer ${isFavorite ? "ring-1 ring-yellow-300" : ""
-                }`}
+className="bg-white rounded-xl shadow-md p-4 text-center transition transform hover:scale-110 hover:shadow-xl duration-200 cursor-pointer relative"
         >
             {/* ⭐ Favorite */}
             <button
