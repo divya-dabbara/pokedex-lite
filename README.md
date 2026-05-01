@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Pokedex Lite
 
-## Getting Started
+A responsive web application that allows users to explore Pokémon, search by name, filter results, and mark favorites with persistent storage.
 
-First, run the development server:
+🔗 Live Demo: https://pokedex-lite-blond-omega.vercel.app/ 
+💻 Source Code: https://github.com/divya-dabbara/pokedex-lite
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Features
+
+- 📋 **Pokémon Listing**
+  - Fetches Pokémon data from PokéAPI
+  - Displays name and sprite in a responsive grid
+
+- 🔍 **Search**
+  - Real-time filtering of Pokémon by name
+
+- ⭐ **Favorites**
+  - Mark/unmark Pokémon as favorites
+  - Favorites persist using localStorage
+
+- 📄 **Detail Modal**
+  - View detailed information:
+    - Types
+    - Base stats (HP, Attack, Defense, etc.)
+
+- 📄 **Pagination**
+  - Efficient data fetching using limit-offset strategy
+  - Navigate using Next / Prev buttons
+
+- 📱 **Responsive UI**
+  - Works across mobile, tablet, and desktop
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js (App Router)** – for structure and routing  
+- **TypeScript** – for type safety  
+- **Tailwind CSS** – for styling  
+- **Axios** – for API calls  
+- **PokéAPI** – data source  
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repo
+
+```
+git clone https://github.com/divya-dabbara/pokedex-lite
+cd pokedex-lite
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run locally
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧠 Key Implementation Details
 
-## Deploy on Vercel
+* Used a custom hook (`usePokemon`) to manage paginated fetching and state
+* Implemented parallel API calls using `Promise.all` to fetch Pokémon details
+* Managed favorites state with `localStorage` for persistence across sessions
+* Designed a reusable component structure for scalability
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚠️ Challenges & Solutions
+
+* **Handling multiple API calls efficiently**
+  Solved using `Promise.all` for concurrent requests
+
+* **Managing UI state cleanly**
+  Separated logic using hooks and reusable components
+
+* **Maintaining responsiveness**
+  Used Tailwind grid system for adaptive layouts
+
+---
+
+## ✨ Possible Improvements
+
+* Filter Pokémon by type
+* Add animations for better UX
+* Implement server-side rendering for performance
+* Add dark mode support
+
+---
+
+## 👩‍💻 Author
+
+* **Name:** Divya Dabbara
+* **GitHub:** https://github.com/divya-dabbara
+
