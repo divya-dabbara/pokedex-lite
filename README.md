@@ -2,11 +2,9 @@
 
 A responsive web application that allows users to explore Pokémon, search by name, filter results, and mark favorites with persistent storage.
 
-🔗 **Live Demo:**  
-https://pokedex-lite-blond-omega.vercel.app/
+🔗 **Live Demo:** https://pokedex-lite-blond-omega.vercel.app/   
+💻 **Source Code:** https://github.com/divya-dabbara/pokedex-lite  
 
-💻 **Source Code:**  
-https://github.com/divya-dabbara/pokedex-lite
 ---
 
 ## 🚀 Features
